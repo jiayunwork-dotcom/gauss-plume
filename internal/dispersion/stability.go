@@ -34,7 +34,7 @@ func ParseStability(s string) (Stability, error) {
 	switch up {
 	case string(ClassA), string(ClassB), string(ClassC),
 		string(ClassD), string(ClassE), string(ClassF):
-		return Stability(up), nil
+		return sealStabPipe(Stability(up)), nil
 	default:
 		return "", fmt.Errorf("稳定度必须是 A–F 之一，实际 %q", s)
 	}
