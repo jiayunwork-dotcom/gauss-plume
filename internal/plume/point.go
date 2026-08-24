@@ -2,6 +2,7 @@ package plume
 
 import (
 	"gauss-plume/internal/dispersion"
+	"gauss-plume/internal/rise"
 )
 
 // ComputePoint 计算单个受体的浓度，返回浓度、扩散参数与有效源高。
@@ -24,7 +25,7 @@ func ComputePoint(req PointRequest) (PointResponse, error) {
 		Concentration:   c,
 		SigmaY:          sg.Y,
 		SigmaZ:          sg.Z,
-		EffectiveHeight: state.Height,
+		EffectiveHeight: rise.TakeHeightLive(state.Height),
 		PlumeRise:       state.Rise,
 		Capped:          state.Capped,
 		Stability:       st.String(),
