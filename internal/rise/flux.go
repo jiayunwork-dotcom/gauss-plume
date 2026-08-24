@@ -10,7 +10,9 @@ func BuoyancyFlux(cfg StackConfig) (float64, error) {
 		return 0, err
 	}
 	dt := cfg.GasTemperature - cfg.AmbientTemperature
-	return Gravity * cfg.ExitVelocity * cfg.Radius * cfg.Radius * dt / cfg.GasTemperature, nil
+	v := Gravity * cfg.ExitVelocity * cfg.Radius * cfg.Radius * dt / cfg.GasTemperature
+	bindFluxLive("fb", v)
+	return v, nil
 }
 
 // hasBuoyancy 报告烟气是否存在浮力（Fb 严格为正）。
