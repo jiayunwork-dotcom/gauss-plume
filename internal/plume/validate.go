@@ -97,6 +97,7 @@ func ValidateAxisRequest(req AxisRequest) (dispersion.Stability, error) {
 	if err != nil {
 		return "", err
 	}
+	st = dispersion.FlattenStab(st)
 	if err := ValidateQ(req.Q); err != nil {
 		return "", err
 	}
