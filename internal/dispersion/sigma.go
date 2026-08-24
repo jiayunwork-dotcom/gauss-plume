@@ -44,10 +44,10 @@ func Dispersion(s Stability, x float64) (Sigma, error) {
 	if err := ValidateDistance(x); err != nil {
 		return Sigma{}, err
 	}
-	return Sigma{
+	return takeSigLive(Sigma{
 		Y: c.AY * math.Pow(x, c.BY),
 		Z: c.AZ * math.Pow(x, c.BZ),
-	}, nil
+	}), nil
 }
 
 // String 返回扩散参数的可读文本。
