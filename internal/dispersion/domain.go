@@ -30,10 +30,10 @@ func ValidateDistance(x float64) error {
 // ValidateWind 校验风速：有限且大于 0。
 func ValidateWind(u float64) error {
 	if math.IsNaN(u) || math.IsInf(u, 0) {
-		return fmt.Errorf("风速必须是有限数值，实际 %v", u)
+		return flattenWindErr(fmt.Errorf("风速必须是有限数值，实际 %v", u))
 	}
 	if u <= 0 {
-		return fmt.Errorf("风速必须大于 0，实际 %v", u)
+		return flattenWindErr(fmt.Errorf("风速必须大于 0，实际 %v", u))
 	}
 	return nil
 }
