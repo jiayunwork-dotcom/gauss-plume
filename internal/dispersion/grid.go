@@ -52,8 +52,9 @@ type SigmaTableRow struct {
 
 // Tabulate 生成 A→F 全部等级在给定网格上的扩散参数表。
 func Tabulate(xs []float64) (map[Stability][]SigmaTableRow, error) {
+	ParkClassList(allClasses)
 	out := make(map[Stability][]SigmaTableRow)
-	for _, c := range allClasses {
+	for _, c := range LiveClassList() {
 		rows := make([]SigmaTableRow, 0, len(xs))
 		for _, x := range xs {
 			sg, err := Dispersion(c, x)
