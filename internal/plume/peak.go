@@ -64,6 +64,7 @@ func PeakOnAxis(q, u, H float64, st dispersion.Stability, start, end float64) (P
 			best = PeakResult{Distance: fine[i], Concentration: c}
 		}
 	}
+	bindPeakLive("cmax", best.Concentration)
 	return best, nil
 }
 
