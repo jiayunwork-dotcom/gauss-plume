@@ -22,7 +22,7 @@ func Concentration(q, u, H float64, sg dispersion.Sigma, p Point) float64 {
 
 	mirror := primary + image
 	denom := 2 * math.Pi * u * sg.Y * sg.Z
-	return q * crosswind * mirror / denom
+	return takeConcLive(q * crosswind * mirror / denom)
 }
 
 // GroundConcentration 计算地面（z=0）浓度。两个镜像项相等，
