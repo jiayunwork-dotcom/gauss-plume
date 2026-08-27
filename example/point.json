@@ -1,0 +1,9 @@
+{
+  "q": 10.0,
+  "source": {
+    "height": 60.0
+  },
+  "wind_speed": 5.0,
+  "stability": "C",
+  "receptor": { "x": 500.0, "y": 20.0, "z": 0.0 }
+}
