@@ -1,0 +1,7 @@
+{
+  "q": 5.0,
+  "source": { "height": 0 },
+  "wind_speed": 3.0,
+  "stability": "D",
+  "axis": { "start": 50.0, "end": 2000.0, "count": 40, "y": 0.0, "z": 0.0 }
+}
